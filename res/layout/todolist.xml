@@ -26,14 +26,14 @@
             android:layout_centerInParent="true"
             android:text="@string/sn" />
         <Button 
-            android:id="@+id/addItem"
+            android:id="@+id/addActivity"
             android:background="#43CD80"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:text="addItem" />
+            android:text="addActivity" />
     </RelativeLayout> 
     <RelativeLayout 
         android:background="#48D1CC"
@@ -47,7 +47,7 @@
         android:layout_height="0dp"
         android:layout_weight="8" >
 		<ListView 
-	    	android:id="@+id/itemList"
+	    	android:id="@+id/activityList"
 	    	android:layout_width="fill_parent"
 	    	android:layout_height="wrap_content">
 		</ListView>

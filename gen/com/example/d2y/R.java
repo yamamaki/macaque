@@ -28,7 +28,8 @@ public final class R {
         public static final int PASSWORD=0x7f080013;
         public static final int USERNAME=0x7f080011;
         public static final int action_settings=0x7f080023;
-        public static final int addItem=0x7f080017;
+        public static final int activityList=0x7f080018;
+        public static final int addActivity=0x7f080017;
         public static final int add_back=0x7f080000;
         public static final int add_date01=0x7f080006;
         public static final int add_date02=0x7f080007;
@@ -42,7 +43,6 @@ public final class R {
         public static final int av=0x7f080010;
         public static final int contacts=0x7f08000e;
         public static final int datepicker=0x7f080008;
-        public static final int itemList=0x7f080018;
         public static final int login=0x7f080016;
         public static final int menu=0x7f08000d;
         public static final int progressBar=0x7f08000f;
@@ -63,12 +63,12 @@ public final class R {
         public static final int update_time02=0x7f080022;
     }
     public static final class layout {
-        public static final int additem=0x7f030000;
+        public static final int addactivity=0x7f030000;
         public static final int init=0x7f030001;
         public static final int iu_main=0x7f030002;
         public static final int login=0x7f030003;
         public static final int todolist=0x7f030004;
-        public static final int updateitem=0x7f030005;
+        public static final int updateactivity=0x7f030005;
     }
     public static final class menu {
         public static final int main=0x7f070000;

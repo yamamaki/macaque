@@ -25,10 +25,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.d2y.addItem">
+            android:name="com.example.d2y.addActivity">
         </activity>
         <activity
-            android:name="com.example.d2y.updateItem">
+            android:name="com.example.d2y.updateActivity">
         </activity>
     </application>
 
