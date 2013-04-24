@@ -1,6 +1,5 @@
 package com.example.d2y;
 
-
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -19,6 +18,7 @@ import android.widget.Toast;
 import android.widget.DatePicker.OnDateChangedListener;
 
 public class addActivity extends Activity {
+
 	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE,
 			null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper();
@@ -95,24 +95,32 @@ public class addActivity extends Activity {
 		add_ok.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String[] addActivityArray = new String[7];
-				addActivityArray[0] = add_activity.getText().toString();
-				addActivityArray[1] = add_tag.getText().toString();
-				addActivityArray[2] = add_address.getText().toString();
-				addActivityArray[3] = add_date.getText().toString();
-				addActivityArray[4] = add_time.getText().toString();
-				addActivityArray[5] = add_remind.getText().toString();
-				addActivityArray[6] = add_remark.getText().toString();
-				
-				if (addActivityArray[0].equals("")) {
+				iuActivity addActivity = new iuActivity();
+				addActivity._activity = add_activity.getText().toString();
+				addActivity._tag = add_tag.getText().toString();
+				addActivity._address = add_address.getText().toString();
+				addActivity._date = add_date.getText().toString();
+				addActivity._time = add_time.getText().toString();
+//				 addActivity._remind =Integer.parseInt(add_remind.getText().toString());
+				addActivity._remark = add_remark.getText().toString();
+
+				if (addActivity._activity.equals("")) {
 					Toast.makeText(addActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_LONG).show();
-				} else {
-					idusHelper.insertActivity(iuHelper, addActivityArray);
+				} 
+				else {
+					long res = idusHelper.insertActivity(iuHelper, addActivity);
+					if (res == -1) {
+						Toast.makeText(addActivity.this, "添加活动失败！",
+								Toast.LENGTH_SHORT).show();
+					} else {
+						Toast.makeText(addActivity.this, "添加活动成功！",
+								Toast.LENGTH_SHORT).show();
+					}
 					Intent i = new Intent();
 					setResult(RESULT_OK, i);
 					finish();
-				}
+					}
 			}
 		});
 	}

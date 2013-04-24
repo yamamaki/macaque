@@ -20,7 +20,7 @@ public class updateActivity extends Activity {
 	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE,
 			null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper();
-	String[] updateActivityArray = new String[7];
+	iuActivity updateActivity = new iuActivity();
 	String _activity;
 
 	@Override
@@ -32,7 +32,7 @@ public class updateActivity extends Activity {
 		Intent gi = getIntent();
 		_activity = gi.getStringExtra("_ACTIVITY");
 
-		updateActivityArray = idusHelper.searchActivity(iuHelper, _activity);
+		updateActivity = idusHelper.searchActivity(iuHelper, _activity);
 
 		Button update_back = (Button) findViewById(R.id.update_back);
 		Button update_ok = (Button) findViewById(R.id.update_ok);
@@ -67,13 +67,13 @@ public class updateActivity extends Activity {
 		final EditText update_remind = (EditText) findViewById(R.id.update_remind02);
 		final EditText update_remark = (EditText) findViewById(R.id.update_remark02);
 		
-		update_activity.setText(updateActivityArray[0]);
-		update_tag.setText(updateActivityArray[1]);
-		update_address.setText(updateActivityArray[2]);
-		update_date.setText(updateActivityArray[3]);
-		update_time.setText(updateActivityArray[4]);
-		update_remind.setText(updateActivityArray[5]);
-		update_remark.setText(updateActivityArray[6]);
+		update_activity.setText(updateActivity._activity);
+		update_tag.setText(updateActivity._tag);
+		update_address.setText(updateActivity._address);
+		update_date.setText(updateActivity._date);
+		update_time.setText(updateActivity._time);
+//		update_remind.setText(updateActivity._remind);
+		update_remark.setText(updateActivity._remark);
 		
 		
 		update_back.setOnClickListener(new View.OnClickListener() {
@@ -87,21 +87,21 @@ public class updateActivity extends Activity {
 		update_ok.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String[] newActivityArray = new String[7];
-				newActivityArray[0] = update_activity.getText().toString();
-				newActivityArray[1] = update_tag.getText().toString();
-				newActivityArray[2] = update_address.getText().toString();
-				newActivityArray[3] = update_date.getText().toString();
-				newActivityArray[4] = update_time.getText().toString();
-				newActivityArray[5] = update_remind.getText().toString();
-				newActivityArray[6] = update_remark.getText().toString();
+				iuActivity newActivity = new iuActivity();
+				newActivity._activity = update_activity.getText().toString();
+				newActivity._tag = update_tag.getText().toString();
+				newActivity._address = update_address.getText().toString();
+				newActivity._date = update_date.getText().toString();
+				newActivity._time = update_time.getText().toString();
+//				newActivity._remind = Integer.parseInt(update_remind.getText().toString());
+				newActivity._remark = update_remark.getText().toString();
 				
-				if (newActivityArray[0].equals("")) {
+				if (newActivity._activity.equals("")) {
 					Toast.makeText(updateActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_SHORT).show();
 				} else {
 					long res = idusHelper.updateActivity(iuHelper,
-							newActivityArray, _activity);
+							newActivity, _activity);
 					if (res == -1) {
 						Toast.makeText(updateActivity.this, "更新活动失败！",
 								Toast.LENGTH_SHORT).show();

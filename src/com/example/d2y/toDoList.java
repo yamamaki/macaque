@@ -26,13 +26,12 @@ public class toDoList extends Activity {
 	iuActivity [] iuActivity;
 	final iuOpenHelper iuHelper = new iuOpenHelper(this, DB_TABLE, null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper(); 
-	String [][]activityArrayList = new String[7][];
 	ListView activityList;
 	BaseAdapter adapter_activityList = new BaseAdapter() {
        	@Override 
        	public int getCount() {
-       		if (activityArrayList[0] != null) {
-       			return activityArrayList[0].length;
+       		if (iuActivity != null) {
+       			return iuActivity.length;
        		}
        		else return 0;
        	}
@@ -49,13 +48,13 @@ public class toDoList extends Activity {
        		LinearLayout ll = new LinearLayout(toDoList.this);
        		ll.setOrientation(LinearLayout.HORIZONTAL);
        		TextView tv = new TextView(toDoList.this);
-       		tv.setText(activityArrayList[0][position]);
+       		tv.setText(iuActivity[position]._activity);
        		tv.setTextSize(32);
        		tv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
        				LayoutParams.WRAP_CONTENT));
        		tv.setGravity(Gravity.CENTER_VERTICAL);
        		TextView tv2 = new TextView(toDoList.this);
-       		tv2.setText("["+activityArrayList[3][position]+"]");
+       		tv2.setText("["+iuActivity[position]._date+"]");
        		tv2.setTextSize(28);
        		tv2.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
        				LayoutParams.WRAP_CONTENT));
@@ -70,7 +69,6 @@ public class toDoList extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.todolist);
-        
         activityList = (ListView)findViewById(R.id.activityList);
         activityList.setAdapter(adapter_activityList);
         
@@ -80,7 +78,7 @@ public class toDoList extends Activity {
         	public boolean onItemLongClick(AdapterView<?> arg0, View view, final int position, long id) {
         		AlertDialog.Builder delDialog = new AlertDialog.Builder(toDoList.this);
         		delDialog.setTitle("删除");
-        		delDialog.setMessage("是否要删除活动 "+activityArrayList[0][position]);
+        		delDialog.setMessage("是否要删除活动 "+iuActivity[position]._activity);
         		delDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {}
@@ -88,7 +86,7 @@ public class toDoList extends Activity {
         		delDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {
-						long res = idusHelper.deleteActivity(iuHelper, activityArrayList[0][position]);
+						long res = idusHelper.deleteActivity(iuHelper, iuActivity[position]._activity);
 						if (res == -1) {
 							Toast.makeText(toDoList.this, "对不起，删除活动失败！",
 				        			Toast.LENGTH_SHORT).show();
@@ -111,14 +109,16 @@ public class toDoList extends Activity {
         	public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
         		int requestCode = 2;
         		Intent i = new Intent(toDoList.this, updateActivity.class);
-        		i.putExtra("_ACTIVITY", activityArrayList[0][position]);
+        		i.putExtra("_ACTIVITY", iuActivity[position]._activity);
         		startActivityForResult(i, requestCode);
         	}
         });
+        
         updateActivityList(iuHelper);
+        
         // 绑定 添加事件 按钮
-        Button addItem = (Button)findViewById(R.id.addActivity);
-        addItem.setOnClickListener(new View.OnClickListener() {
+        Button addActivitybtn = (Button)findViewById(R.id.addActivity);
+        addActivitybtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				int requestCode = 1;
@@ -129,8 +129,8 @@ public class toDoList extends Activity {
     }
     
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    	super.onActivityResult(requestCode, resultCode, data);
+    public void onActivityResult(int requestCode, int resultCode, Intent i) {
+    	super.onActivityResult(requestCode, resultCode, i);
     	if (requestCode == 1) {
     		updateActivityList(iuHelper);
     	}
@@ -142,6 +142,6 @@ public class toDoList extends Activity {
     //更新活动列表
     public void updateActivityList(iuOpenHelper helper) {
     	activityList.setAdapter(adapter_activityList);
-    	activityArrayList = idusHelper.getActivities(iuHelper);
+    	iuActivity = idusHelper.getActivities(iuHelper);
     }
 }

@@ -44,7 +44,7 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 	}
 	@Override
 	public void onUpgrade(SQLiteDatabase _db, int _oldVersion, int _newVersion) {
-		_db.execSQL("DROP TABLE IF EXTISTS " + DB_TABLE);
+		_db.execSQL("DROP TABLE IF EXSISTS " + DB_TABLE);
 		onCreate(_db);
 	}
 }
