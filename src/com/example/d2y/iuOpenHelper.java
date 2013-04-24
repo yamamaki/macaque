@@ -14,12 +14,13 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 	public static final String DB_TABLE = "personal_info";
 	public static final int DB_VERSION = 1;
 	//数据库表中的属性名称
-//	public static final String KEY_ID = "_id";
-//	public static final String KEY_USERNAME = "_username";
 	public static final String KEY_ACTIVITY = "_activity";
 	public static final String KEY_TAG = "_tag";
+	public static final String KEY_ADDRESS = "_address";
 	public static final String KEY_DATE = "_date";
 	public static final String KEY_TIME = "_time";
+	public static final String KEY_REMIND = "_remind";
+	public static final String KEY_REMARK = "_remark";
 	
 	
 	public iuOpenHelper(Context context, String name, 
@@ -29,12 +30,13 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 
 	private static final String DB_CREATE = 
 			"create table " + DB_TABLE +"("+
-//			KEY_ID+" integer primary key autoincrement, "+
-//			KEY_USERNAME+" text, "+
 			KEY_ACTIVITY+" text, "+
 			KEY_TAG+" text, "+
+			KEY_ADDRESS+" text, "+
 			KEY_DATE+" text, "+
-			KEY_TIME+" text);";
+			KEY_TIME+" text, "+
+			KEY_REMIND+" integer, "+
+			KEY_REMARK+" text);";
 		
 	@Override
 	public void onCreate(SQLiteDatabase _db) {

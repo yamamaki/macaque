@@ -34,7 +34,7 @@ public class addActivity extends Activity {
 		Calendar cal = Calendar.getInstance();
 
 		// 定义DatePicker
-		DatePicker dp = (DatePicker) findViewById(R.id.datepicker);
+		DatePicker dp = (DatePicker) findViewById(R.id.add_datepicker);
 		int year = cal.get(Calendar.YEAR);
 		int monthOfYear = cal.get(Calendar.MONTH);
 		int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
@@ -47,7 +47,7 @@ public class addActivity extends Activity {
 		});
 
 		// 定义TimePicker
-		TimePicker tp = (TimePicker) findViewById(R.id.timepicker);
+		TimePicker tp = (TimePicker) findViewById(R.id.add_timepicker);
 		int hour = cal.get(Calendar.HOUR);
 		int minute = cal.get(Calendar.MINUTE);
 		tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -58,10 +58,13 @@ public class addActivity extends Activity {
 		});
 
 		// 定义控件变量
-		final EditText add_item = (EditText) findViewById(R.id.add_item02);
+		final EditText add_activity = (EditText) findViewById(R.id.add_activity02);
 		final EditText add_tag = (EditText) findViewById(R.id.add_tag02);
+		final EditText add_address = (EditText) findViewById(R.id.add_address02);
 		final TextView add_date = (TextView) findViewById(R.id.add_date02);
 		final TextView add_time = (TextView) findViewById(R.id.add_time02);
+		final EditText add_remind = (EditText) findViewById(R.id.add_remind02);
+		final EditText add_remark = (EditText) findViewById(R.id.add_remark02);
 
 		// 添加add_date的点击事件
 		add_date.setClickable(true);
@@ -92,11 +95,15 @@ public class addActivity extends Activity {
 		add_ok.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String[] addActivityArray = new String[4];
-				addActivityArray[0] = add_item.getText().toString();
+				String[] addActivityArray = new String[7];
+				addActivityArray[0] = add_activity.getText().toString();
 				addActivityArray[1] = add_tag.getText().toString();
-				addActivityArray[2] = add_date.getText().toString();
+				addActivityArray[2] = add_address.getText().toString();
 				addActivityArray[3] = add_date.getText().toString();
+				addActivityArray[4] = add_time.getText().toString();
+				addActivityArray[5] = add_remind.getText().toString();
+				addActivityArray[6] = add_remark.getText().toString();
+				
 				if (addActivityArray[0].equals("")) {
 					Toast.makeText(addActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_LONG).show();

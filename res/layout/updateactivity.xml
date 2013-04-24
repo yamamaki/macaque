@@ -44,7 +44,7 @@
 	    android:layout_weight="8" >
 		<TextView
 		    android:text="事件"
-		    android:id="@+id/update_item01"
+		    android:id="@+id/update_activity01"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="60dp"
@@ -52,11 +52,11 @@
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		<EditText
 		    android:hint="请输入事件名称"
-		    android:id="@+id/update_item02"
+		    android:id="@+id/update_activity02"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:layout_toRightOf="@+id/update_item01"
-		    android:layout_alignBottom="@+id/update_item01"
+		    android:layout_toRightOf="@+id/update_activity01"
+		    android:layout_alignBottom="@+id/update_activity01"
 		    android:layout_alignParentRight="true"
 		    android:layout_centerHorizontal="true"
 	        android:layout_marginLeft="10dp"
@@ -69,7 +69,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_marginLeft="10dp"
-		    android:layout_below="@+id/update_item01"
+		    android:layout_below="@+id/update_activity01"
 		    android:layout_marginTop="40dp"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		<EditText
@@ -83,6 +83,33 @@
 	        android:layout_marginLeft="10dp"
 	        android:layout_marginRight="10dp" 
 	        android:inputType="text" />
+		
+		<TextView
+		    android:text="地点"
+		    android:id="@+id/update_address01"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginLeft="10dp"
+		    android:layout_below="@+id/update_tag01"
+		    android:layout_marginTop="40dp"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		<EditText
+		    android:id="@+id/update_address02"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/update_address01"
+		    android:layout_alignBottom="@+id/update_address01"
+		    android:layout_centerHorizontal="true"
+	        android:layout_marginLeft="10dp"
+	        android:inputType="text" />
+		<Button 
+		    android:id="@+id/update_address03"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/update_address02"
+		    android:layout_alignBottom="@+id/update_address02" 
+		    android:layout_alignParentRight="true" 
+		    android:layout_marginRight="10dp" />
 		     
 		<TextView
 		    android:text="日期"
@@ -90,7 +117,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_marginLeft="10dp"
-		    android:layout_below="@+id/update_tag01"
+		    android:layout_below="@+id/update_address01"
 		    android:layout_marginTop="40dp"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		
@@ -107,7 +134,7 @@
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
 		
 		<DatePicker 
-		    android:id="@+id/datepicker"
+		    android:id="@+id/update_datepicker"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_centerHorizontal="true"
@@ -120,7 +147,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_marginLeft="10dp"
-		    android:layout_below="@+id/datepicker"
+		    android:layout_below="@+id/update_datepicker"
 		    android:layout_marginTop="40dp"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		
@@ -138,12 +165,55 @@
 	        android:textAppearance="?android:attr/textAppearanceMedium" />
 		
 		<TimePicker 
-		    android:id="@+id/timepicker"
+		    android:id="@+id/update_timepicker"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_centerHorizontal="true"
 		    android:layout_alignRight="@+id/update_tag02"
 		    android:layout_below="@+id/update_time01" />
+		
+		<TextView
+		    android:text="提醒"
+		    android:id="@+id/update_remind01"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_marginLeft="10dp"
+		    android:layout_below="@+id/update_timepicker"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		<EditText
+		    android:id="@+id/update_remind02"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/update_remind01"
+		    android:layout_alignBottom="@+id/update_remind01"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerHorizontal="true"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp" 
+	        android:inputType="text" />
+		
+		<TextView
+		    android:text="备注"
+		    android:id="@+id/update_remark01"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="40dp"
+		    android:layout_marginLeft="10dp"
+		    android:layout_below="@+id/update_remind01"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+		<EditText
+		    android:id="@+id/update_remark02"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/update_remark01"
+		    android:layout_alignBottom="@+id/update_remark01"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerHorizontal="true"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp" 
+	        android:inputType="text" />
+		
 	</RelativeLayout>
 </LinearLayout>
 </ScrollView>

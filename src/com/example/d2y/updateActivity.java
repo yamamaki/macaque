@@ -15,13 +15,12 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.DatePicker.OnDateChangedListener;
 
-;
 
 public class updateActivity extends Activity {
 	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE,
 			null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper();
-	String[] updateActivityArray = new String[4];
+	String[] updateActivityArray = new String[7];
 	String _activity;
 
 	@Override
@@ -37,7 +36,7 @@ public class updateActivity extends Activity {
 
 		Button update_back = (Button) findViewById(R.id.update_back);
 		Button update_ok = (Button) findViewById(R.id.update_ok);
-		DatePicker dp = (DatePicker) findViewById(R.id.datepicker);
+		DatePicker dp = (DatePicker) findViewById(R.id.update_datepicker);
 		Calendar cal = Calendar.getInstance();
 		int year = cal.get(Calendar.YEAR);
 		int monthOfYear = cal.get(Calendar.MONTH);
@@ -50,7 +49,7 @@ public class updateActivity extends Activity {
 			}
 		});
 		
-		TimePicker tp = (TimePicker) findViewById(R.id.timepicker);
+		TimePicker tp = (TimePicker) findViewById(R.id.update_timepicker);
 		int hour = cal.get(Calendar.HOUR);
 		int minute = cal.get(Calendar.MINUTE);
 		tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -60,15 +59,22 @@ public class updateActivity extends Activity {
 			}
 		});
 
-		final EditText update_item = (EditText) findViewById(R.id.update_item02);
+		final EditText update_activity = (EditText) findViewById(R.id.update_activity02);
 		final EditText update_tag = (EditText) findViewById(R.id.update_tag02);
+		final EditText update_address = (EditText) findViewById(R.id.update_address02);
 		final TextView update_date = (TextView) findViewById(R.id.update_date02);
 		final TextView update_time = (TextView) findViewById(R.id.update_time02);
+		final EditText update_remind = (EditText) findViewById(R.id.update_remind02);
+		final EditText update_remark = (EditText) findViewById(R.id.update_remark02);
 		
-		update_item.setText(updateActivityArray[0]);
+		update_activity.setText(updateActivityArray[0]);
 		update_tag.setText(updateActivityArray[1]);
-		update_date.setText(updateActivityArray[2]);
-		update_time.setText(updateActivityArray[3]);
+		update_address.setText(updateActivityArray[2]);
+		update_date.setText(updateActivityArray[3]);
+		update_time.setText(updateActivityArray[4]);
+		update_remind.setText(updateActivityArray[5]);
+		update_remark.setText(updateActivityArray[6]);
+		
 		
 		update_back.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -81,11 +87,15 @@ public class updateActivity extends Activity {
 		update_ok.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String[] newActivityArray = new String[4];
-				newActivityArray[0] = update_item.getText().toString();
+				String[] newActivityArray = new String[7];
+				newActivityArray[0] = update_activity.getText().toString();
 				newActivityArray[1] = update_tag.getText().toString();
-				newActivityArray[2] = update_date.getText().toString();
-				newActivityArray[3] = update_time.getText().toString();
+				newActivityArray[2] = update_address.getText().toString();
+				newActivityArray[3] = update_date.getText().toString();
+				newActivityArray[4] = update_time.getText().toString();
+				newActivityArray[5] = update_remind.getText().toString();
+				newActivityArray[6] = update_remark.getText().toString();
+				
 				if (newActivityArray[0].equals("")) {
 					Toast.makeText(updateActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_SHORT).show();

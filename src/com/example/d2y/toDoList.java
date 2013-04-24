@@ -23,9 +23,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class toDoList extends Activity {
+	iuActivity [] iuActivity;
 	final iuOpenHelper iuHelper = new iuOpenHelper(this, DB_TABLE, null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper(); 
-	String [][]activityArrayList = new String[4][];
+	String [][]activityArrayList = new String[7][];
 	ListView activityList;
 	BaseAdapter adapter_activityList = new BaseAdapter() {
        	@Override 
@@ -54,7 +55,7 @@ public class toDoList extends Activity {
        				LayoutParams.WRAP_CONTENT));
        		tv.setGravity(Gravity.CENTER_VERTICAL);
        		TextView tv2 = new TextView(toDoList.this);
-       		tv2.setText("["+activityArrayList[2][position]+"]");
+       		tv2.setText("["+activityArrayList[3][position]+"]");
        		tv2.setTextSize(28);
        		tv2.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
        				LayoutParams.WRAP_CONTENT));
