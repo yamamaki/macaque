@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".iu" >
+    <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="0dp"
+         android:layout_weight="1.5"
+         android:background="#3CB371" >  
+        <Button
+	        android:id="@+id/menu"
+	        android:background="#43CD80"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="10dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:text="@string/menu" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:text="@string/sn" />
+        <Button 
+            android:id="@+id/contacts"
+            android:background="#43CD80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="@string/contacts" />
+    </RelativeLayout> 
+    <RelativeLayout 
+        android:background="#48D1CC"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        >
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#4876FF"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8">
+    </RelativeLayout>
+    
+    
+    
+</LinearLayout>
