@@ -25,6 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 public class mapdemo extends FragmentActivity {
 	private GoogleMap mMap;
+	private iuGeoCoder gc = new iuGeoCoder();
 	private GoogleMapOptions options = new GoogleMapOptions();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,31 +62,37 @@ public class mapdemo extends FragmentActivity {
 			public boolean onMarkerClick(Marker arg) {
 				// TODO Auto-generated method stub
 				LatLng pos = arg.getPosition();
-				double lat = round(pos.latitude, 6, BigDecimal.ROUND_HALF_UP);
-				double lng = round(pos.longitude, 6, BigDecimal.ROUND_HALF_UP);
-				arg.setTitle(lat+" "+lng);
-				Geocoder geocoder = new Geocoder(mapdemo.this, Locale.getDefault());
+				double lat = round(pos.latitude, 7, BigDecimal.ROUND_HALF_UP);
+				double lng = round(pos.longitude, 7, BigDecimal.ROUND_HALF_UP);
 				try {
-					List<Address> addresses = geocoder.getFromLocation(lat, lng, 5);
-
-					if (addresses.size() > 0) {
-					   String strZipcode = addresses.get(0).getPostalCode();
-
-					   //if 1st provider does not have data, loop through other providers to find it.
-					   int count = 0;
-					   while (strZipcode == null && count < addresses.size()) {
-					      strZipcode = addresses.get(count).getLocality();
-					      arg.setSnippet(strZipcode);
-					      
-					      arg.setVisible(true);
-					      arg.setDraggable(true);
-					      arg.setSnippet(strZipcode);
-					      count++;
-					   }
-					}
-				} catch (IOException e) {
-					Log.e("TAG", "impossible to connect to Geocoder",e);
+					arg.setTitle(gc.getGeoInfo(lat, lng));
+				} catch (Exception e) {
+					arg.setTitle(lat+" "+lng);
 				}
+				
+//				
+//				Geocoder geocoder = new Geocoder(mapdemo.this, Locale.getDefault());
+//				try {
+//					List<Address> addresses = geocoder.getFromLocation(lat, lng, 5);
+//
+//					if (addresses.size() > 0) {
+//					   String strZipcode = addresses.get(0).getPostalCode();
+//
+//					   //if 1st provider does not have data, loop through other providers to find it.
+//					   int count = 0;
+//					   while (strZipcode == null && count < addresses.size()) {
+//					      strZipcode = addresses.get(count).getLocality();
+//					      arg.setSnippet(strZipcode);
+//					      
+//					      arg.setVisible(true);
+//					      arg.setDraggable(true);
+//					      arg.setSnippet(strZipcode);
+//					      count++;
+//					   }
+//					}
+//				} catch (IOException e) {
+//					Log.e("TAG", "impossible to connect to Geocoder",e);
+//				}
 			
 				return false;
 			}

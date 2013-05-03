@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 public class addActivity extends Activity {
 
-	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE, null, 1);
+	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE_ACTIVITY, null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper();
 	
 	@Override
@@ -59,21 +59,17 @@ public class addActivity extends Activity {
 		add_ok.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				iuActivity addActivity = new iuActivity();
-				addActivity._activity = add_activity.getText().toString();
-				addActivity._tag = add_tag.getText().toString();
-				addActivity._address = add_address.getText().toString();
-				addActivity._date = add_date.getText().toString();
-				addActivity._time = add_time.getText().toString();
-				if (add_remind.isChecked()) addActivity._remind = 1;
-				else addActivity._remind = 0;
-				addActivity._remark = add_remark.getText().toString();
-				if (addActivity._activity.equals("")) {
+				iuActivity newActivity = new iuActivity();
+				newActivity.setIUActivity(add_activity.getText().toString(), 
+						add_tag.getText().toString(), add_address.getText().toString(),
+						add_date.getText().toString(), add_time.getText().toString(), 
+						add_remind.isChecked(), add_remark.getText().toString());
+				if (newActivity.getActivity().equals("")) {
 					Toast.makeText(addActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_LONG).show();
 				} 
 				else {
-					long res = idusHelper.insertActivity(iuHelper, addActivity);
+					long res = idusHelper.insertActivity(iuHelper, newActivity);
 					if (res == -1) {
 						Toast.makeText(addActivity.this, "添加活动失败！",
 								Toast.LENGTH_SHORT).show();

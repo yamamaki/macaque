@@ -1,7 +1,6 @@
 package com.example.d2y;
 
 import static com.example.d2y.iuOpenHelper.*;
-import static com.example.d2y.iuActivity.*;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +13,7 @@ public class idusActivityHelper {
 	//获取所有活动
     public iuActivity[] getActivities(iuOpenHelper helper) {
     	SQLiteDatabase _db = helper.getWritableDatabase();
-    	Cursor c = _db.query(DB_TABLE, new String[] {KEY_ACTIVITY, KEY_TAG, 
+    	Cursor c = _db.query(DB_TABLE_ACTIVITY, new String[] {KEY_ACTIVITY, KEY_TAG, 
     												KEY_ADDRESS, KEY_DATE,
     												KEY_TIME, KEY_REMIND,
     												KEY_REMARK},
@@ -30,13 +29,10 @@ public class idusActivityHelper {
     	int i = 0;
     	for (c.moveToFirst(); !(c.isAfterLast()); c.moveToNext()) {
     		iuActivity[i] = new iuActivity();
-    		iuActivity[i]._activity = c.getString(activityIndex);
-    		iuActivity[i]._tag = c.getString(tagIndex);
-    		iuActivity[i]._address = c.getString(addressIndex);
-    		iuActivity[i]._date = c.getString(dateIndex);
-    		iuActivity[i]._time = c.getString(timeIndex);
-    		iuActivity[i]._remind = c.getInt(remindIndex);
-    		iuActivity[i]._remark = c.getString(remarkIndex);
+    		iuActivity[i].setIUActivity(c.getString(activityIndex), 
+    				c.getString(tagIndex), c.getString(addressIndex), 
+    				c.getString(dateIndex), c.getString(timeIndex),
+    				c.getInt(remindIndex), c.getString(remarkIndex));
     		++i;
     	}
     	c.close();
@@ -49,14 +45,14 @@ public class idusActivityHelper {
 		long res;
 		SQLiteDatabase _db = iuHelper.getWritableDatabase();
 		ContentValues v = new ContentValues();
-		v.put(KEY_ACTIVITY, iuActivity._activity);
-		v.put(KEY_TAG, iuActivity._tag);
-		v.put(KEY_ADDRESS, iuActivity._address);
-		v.put(KEY_DATE, iuActivity._date);
-		v.put(KEY_TIME, iuActivity._time);
-		v.put(KEY_REMIND, iuActivity._remind);
-		v.put(KEY_REMARK, iuActivity._remark);
-		res = _db.insert(DB_TABLE, null, v);
+		v.put(KEY_ACTIVITY, iuActivity.getActivity());
+		v.put(KEY_TAG, iuActivity.getTag());
+		v.put(KEY_ADDRESS, iuActivity.getAddress());
+		v.put(KEY_DATE, iuActivity.getDate());
+		v.put(KEY_TIME, iuActivity.getTime());
+		v.put(KEY_REMIND, iuActivity.getRemind());
+		v.put(KEY_REMARK, iuActivity.getRemark());
+		res = _db.insert(DB_TABLE_ACTIVITY, null, v);
 		_db.close();
 		return res;
 	}
@@ -65,7 +61,7 @@ public class idusActivityHelper {
 	public long deleteActivity(iuOpenHelper iuHelper, String activity) {
 		long res;
 		SQLiteDatabase _db = iuHelper.getWritableDatabase();
-		res = _db.delete(DB_TABLE, KEY_ACTIVITY + "=?", new String[] {activity});
+		res = _db.delete(DB_TABLE_ACTIVITY, KEY_ACTIVITY + "=?", new String[] {activity});
 		_db.close();
 		return res;
 	}
@@ -76,14 +72,14 @@ public class idusActivityHelper {
 		long res;
 		SQLiteDatabase _db = iuHelper.getWritableDatabase();
 		ContentValues v = new ContentValues();
-		v.put(KEY_ACTIVITY, iuActivity._activity);
-		v.put(KEY_TAG, iuActivity._tag);
-		v.put(KEY_ADDRESS, iuActivity._address);
-		v.put(KEY_DATE, iuActivity._date);
-		v.put(KEY_TIME, iuActivity._time);
-		v.put(KEY_REMIND, iuActivity._remind);
-		v.put(KEY_REMARK, iuActivity._remark);
-		res = _db.update(DB_TABLE, v, KEY_ACTIVITY + "=?", new String[] {activity});
+		v.put(KEY_ACTIVITY, iuActivity.getActivity());
+		v.put(KEY_TAG, iuActivity.getTag());
+		v.put(KEY_ADDRESS, iuActivity.getAddress());
+		v.put(KEY_DATE, iuActivity.getDate());
+		v.put(KEY_TIME, iuActivity.getTime());
+		v.put(KEY_REMIND, iuActivity.getRemind());
+		v.put(KEY_REMARK, iuActivity.getRemark());
+		res = _db.update(DB_TABLE_ACTIVITY, v, KEY_ACTIVITY + "=?", new String[] {activity});
 		_db.close();
 		return res; 
 	}
@@ -92,16 +88,16 @@ public class idusActivityHelper {
 	public iuActivity searchActivity(iuOpenHelper iuHelper, String activity) {
 		iuActivity iuActivity = new iuActivity();
 		SQLiteDatabase _db = iuHelper.getWritableDatabase();
-		Cursor res = _db.query(DB_TABLE, null, KEY_ACTIVITY + "=?",
+		Cursor res = _db.query(DB_TABLE_ACTIVITY, null, KEY_ACTIVITY + "=?",
 				new String[] {activity}, null, null, null);
 		while (res.moveToNext()) {
-			iuActivity._activity = res.getString(res.getColumnIndex(KEY_ACTIVITY));
-			iuActivity._tag = res.getString(res.getColumnIndex(KEY_TAG));
-			iuActivity._address = res.getString(res.getColumnIndex(KEY_ADDRESS));
-			iuActivity._date = res.getString(res.getColumnIndex(KEY_DATE));
-			iuActivity._time = res.getString(res.getColumnIndex(KEY_TIME));
-			iuActivity._remind = res.getInt(res.getColumnIndex(KEY_REMIND));
-			iuActivity._remark = res.getString(res.getColumnIndex(KEY_REMARK));
+			iuActivity.setIUActivity(res.getString(res.getColumnIndex(KEY_ACTIVITY)),
+					res.getString(res.getColumnIndex(KEY_TAG)), 
+					res.getString(res.getColumnIndex(KEY_ADDRESS)), 
+					res.getString(res.getColumnIndex(KEY_DATE)), 
+					res.getString(res.getColumnIndex(KEY_TIME)), 
+					res.getInt(res.getColumnIndex(KEY_REMIND)), 
+					res.getString(res.getColumnIndex(KEY_REMARK)));
 		}
 		_db.close();
 		return iuActivity;

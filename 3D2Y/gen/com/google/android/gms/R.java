@@ -8,11 +8,11 @@ package com.google.android.gms;
 
 public final class R {
 	public static final class id {
-		public static final int terrain = 0x7f05000b;
-		public static final int none = 0x7f050000;
-		public static final int satellite = 0x7f05000a;
-		public static final int hybrid = 0x7f05000c;
-		public static final int normal = 0x7f050009;
+		public static final int terrain = 0x7f050008;
+		public static final int none = 0x7f050005;
+		public static final int satellite = 0x7f050007;
+		public static final int hybrid = 0x7f050009;
+		public static final int normal = 0x7f050006;
 	}
 	public static final class string {
 		public static final int common_google_play_services_install_title = 0x7f070002;
@@ -41,7 +41,7 @@ public final class R {
 		public static final int MapAttrs_cameraBearing = 1;
 		public static final int MapAttrs_uiZoomControls = 10;
 		public static final int MapAttrs_zOrderOnTop = 13;
-		public static final int[] MapAttrs = { 0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035, 0x7f010036, 0x7f010037 };
+		public static final int[] MapAttrs = { 0x7f010020, 0x7f010021, 0x7f010022, 0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026, 0x7f010027, 0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b, 0x7f01002c, 0x7f01002d };
 		public static final int MapAttrs_cameraTargetLat = 2;
 		public static final int MapAttrs_cameraTargetLng = 3;
 		public static final int MapAttrs_uiTiltGestures = 9;
@@ -51,19 +51,19 @@ public final class R {
 		public static final int MapAttrs_useViewLifecycle = 12;
 	}
 	public static final class attr {
-		public static final int cameraTargetLng = 0x7f01002d;
-		public static final int uiScrollGestures = 0x7f010032;
-		public static final int zOrderOnTop = 0x7f010037;
-		public static final int cameraBearing = 0x7f01002b;
-		public static final int cameraTargetLat = 0x7f01002c;
-		public static final int uiRotateGestures = 0x7f010031;
-		public static final int uiZoomGestures = 0x7f010035;
-		public static final int uiCompass = 0x7f010030;
-		public static final int uiZoomControls = 0x7f010034;
-		public static final int cameraTilt = 0x7f01002e;
-		public static final int cameraZoom = 0x7f01002f;
-		public static final int uiTiltGestures = 0x7f010033;
-		public static final int useViewLifecycle = 0x7f010036;
-		public static final int mapType = 0x7f01002a;
+		public static final int cameraTargetLng = 0x7f010023;
+		public static final int uiScrollGestures = 0x7f010028;
+		public static final int zOrderOnTop = 0x7f01002d;
+		public static final int cameraBearing = 0x7f010021;
+		public static final int cameraTargetLat = 0x7f010022;
+		public static final int uiRotateGestures = 0x7f010027;
+		public static final int uiZoomGestures = 0x7f01002b;
+		public static final int uiCompass = 0x7f010026;
+		public static final int uiZoomControls = 0x7f01002a;
+		public static final int cameraTilt = 0x7f010024;
+		public static final int cameraZoom = 0x7f010025;
+		public static final int uiTiltGestures = 0x7f010029;
+		public static final int useViewLifecycle = 0x7f01002c;
+		public static final int mapType = 0x7f010020;
 	}
 }

@@ -36,13 +36,19 @@
         <activity
             android:name="com.example.d2y.iu"
             android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.d2y.toDoList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.d2y.login">
+        </activity>
+        <activity
+            android:name="com.example.d2y.register">
+        </activity>
+        <activity
+            android:name="com.example.d2y.toDoList">
         </activity>
         <activity
             android:name="com.example.d2y.addActivity">

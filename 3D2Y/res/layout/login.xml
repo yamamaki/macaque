@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".iu" >
+    android:orientation="vertical" >
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:layout_alignParentTop="true" />
+        android:layout_height="2dp" />
 
     <QuickContactBadge
         android:id="@+id/av"
@@ -19,77 +18,79 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp" />
 
-    <TextView
-        android:id="@+id/USERNAME"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/av"
-        android:layout_below="@+id/av"
-        android:layout_marginTop="40dp"
-        android:text="@string/USERNAME"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" 
+        android:layout_marginTop="40dp">
 
-    <EditText
-        android:id="@+id/sn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/USERNAME"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_toRightOf="@+id/USERNAME"
-        android:ems="10"
-        android:hint="@string/USERNAME"
-        android:inputType="text" />
+        <TextView
+            android:id="@+id/login_sn01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="用户名"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/PASSWORD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/av"
-        android:layout_below="@+id/USERNAME"
-        android:layout_marginTop="30dp"
-        android:text="@string/PASSWORD"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        <EditText
+            android:id="@+id/login_sn02"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:inputType="textNoSuggestions" />
+    </RelativeLayout>
 
-    <EditText
-        android:id="@+id/pwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/PASSWORD"
-        android:layout_alignLeft="@+id/sn"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:ems="10"
-        android:hint="@string/PASSWORD"
-        android:inputType="textPassword" >
-    </EditText>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
 
-    <Button
-        android:id="@+id/reg"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/pwd"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/REGISTER" />
+        <TextView
+            android:id="@+id/login_pw01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="密码"
+            android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/reg"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/reg"
-        android:text="@string/LOGIN" />
-    
+        <EditText
+            android:id="@+id/login_pw02"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:inputType="textPassword" />
+    </RelativeLayout>
 
- 
-    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" 
+		android:layout_marginTop="40dp">
 
+        <Button
+            android:id="@+id/reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/login"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="注册"
+            android:textSize="20sp" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="登录"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+</LinearLayout>

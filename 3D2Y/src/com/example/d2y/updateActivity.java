@@ -19,13 +19,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-import android.widget.DatePicker.OnDateChangedListener;
 
 
 public class updateActivity extends Activity {
-	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE, null, 1);
+	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE_ACTIVITY, null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper();
-	iuActivity updateActivity = new iuActivity();
+	iuActivity oldActivity = new iuActivity();
 	String _activity;
 
 	@Override
@@ -37,7 +36,7 @@ public class updateActivity extends Activity {
 		Intent gi = getIntent();
 		_activity = gi.getStringExtra("_ACTIVITY");
 
-		updateActivity = idusHelper.searchActivity(iuHelper, _activity);
+		oldActivity = idusHelper.searchActivity(iuHelper, _activity);
 
 		final Button update_back = (Button) findViewById(R.id.update_back);
 		final Button update_ok = (Button) findViewById(R.id.update_ok);
@@ -57,14 +56,14 @@ public class updateActivity extends Activity {
 		final int hourOfDay = cal.get(Calendar.HOUR_OF_DAY);
 		final int minute = cal.get(Calendar.MINUTE);
 
-		update_activity.setText(updateActivity._activity);
-		update_tag.setText(updateActivity._tag);
-		update_address.setText(updateActivity._address);
-		update_date.setText(updateActivity._date);
-		update_time.setText(updateActivity._time);
-		if (updateActivity._remind == 1) update_remind.setChecked(true);
+		update_activity.setText(oldActivity.getActivity());
+		update_tag.setText(oldActivity.getTag());
+		update_address.setText(oldActivity.getAddress());
+		update_date.setText(oldActivity.getDate());
+		update_time.setText(oldActivity.getTime());
+		if (oldActivity.getRemind() == 1) update_remind.setChecked(true);
 		else update_remind.setChecked(false);
-		update_remark.setText(updateActivity._remark);
+		update_remark.setText(oldActivity.getRemark());
 		
 		update_back.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -79,16 +78,12 @@ public class updateActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				iuActivity newActivity = new iuActivity();
-				newActivity._activity = update_activity.getText().toString();
-				newActivity._tag = update_tag.getText().toString();
-				newActivity._address = update_address.getText().toString();
-				newActivity._date = update_date.getText().toString();
-				newActivity._time = update_time.getText().toString();
-				if (update_remind.isChecked()) newActivity._remind = 1;
-				else newActivity._remind = 0;
-				newActivity._remark = update_remark.getText().toString();
+				newActivity.setIUActivity(update_activity.getText().toString(), 
+						update_tag.getText().toString(), update_address.getText().toString(),
+						update_date.getText().toString(), update_time.getText().toString(), 
+						update_remind.isChecked(), update_remark.getText().toString());
 				
-				if (newActivity._activity.equals("")) {
+				if (newActivity.getActivity().equals("")) {
 					Toast.makeText(updateActivity.this, "对不起，请将活动填写完整",
 							Toast.LENGTH_SHORT).show();
 				} else {

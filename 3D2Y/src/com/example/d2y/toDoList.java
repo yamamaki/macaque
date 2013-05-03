@@ -1,12 +1,11 @@
 package com.example.d2y;
 
-import static com.example.d2y.iuOpenHelper.*;
-
-import android.os.Bundle;
-import android.app.Activity;
+import com.example.d2y.iuOpenHelper;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +21,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class toDoList extends Activity {
+import com.slidingmenu.lib.SlidingMenu;
+
+public class toDoList extends FragmentActivity {
 	iuActivity [] iuActivity;
-	final iuOpenHelper iuHelper = new iuOpenHelper(this, DB_TABLE, null, 1);
+	final iuOpenHelper iuHelper = new iuOpenHelper(this, iuOpenHelper.DB_TABLE_ACTIVITY, null, 1);
 	final idusActivityHelper idusHelper = new idusActivityHelper(); 
 	ListView activityList;
 	BaseAdapter adapter_activityList = new BaseAdapter() {
@@ -48,13 +49,13 @@ public class toDoList extends Activity {
        		LinearLayout ll = new LinearLayout(toDoList.this);
        		ll.setOrientation(LinearLayout.HORIZONTAL);
        		TextView tv = new TextView(toDoList.this);
-       		tv.setText(iuActivity[position]._activity);
+       		tv.setText(iuActivity[position].getActivity());
        		tv.setTextSize(32);
        		tv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
        				LayoutParams.WRAP_CONTENT));
        		tv.setGravity(Gravity.CENTER_VERTICAL);
        		TextView tv2 = new TextView(toDoList.this);
-       		tv2.setText("["+iuActivity[position]._date+"]");
+       		tv2.setText("["+iuActivity[position].getDate()+"]");
        		tv2.setTextSize(28);
        		tv2.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
        				LayoutParams.WRAP_CONTENT));
@@ -65,10 +66,21 @@ public class toDoList extends Activity {
        	}
        };
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.todolist);
+        
+        SlidingMenu menu = new SlidingMenu(this);
+        menu.setMode(SlidingMenu.LEFT);
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.setShadowWidthRes(R.dimen.shadow_width);
+        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        menu.setShadowDrawable(R.drawable.shadow);
+        menu.setFadeDegree(0.35f);
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        menu.setMenu(R.layout.init);
+        
         activityList = (ListView)findViewById(R.id.activityList);
         activityList.setAdapter(adapter_activityList);
         
@@ -78,7 +90,7 @@ public class toDoList extends Activity {
         	public boolean onItemLongClick(AdapterView<?> arg0, View view, final int position, long id) {
         		AlertDialog.Builder delDialog = new AlertDialog.Builder(toDoList.this);
         		delDialog.setTitle("删除");
-        		delDialog.setMessage("是否要删除活动 "+iuActivity[position]._activity);
+        		delDialog.setMessage("是否要删除活动 "+iuActivity[position].getActivity());
         		delDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {}
@@ -86,7 +98,7 @@ public class toDoList extends Activity {
         		delDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {
-						long res = idusHelper.deleteActivity(iuHelper, iuActivity[position]._activity);
+						long res = idusHelper.deleteActivity(iuHelper, iuActivity[position].getActivity());
 						if (res == -1) {
 							Toast.makeText(toDoList.this, "对不起，删除活动失败！",
 				        			Toast.LENGTH_SHORT).show();
@@ -109,7 +121,7 @@ public class toDoList extends Activity {
         	public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
         		int requestCode = 2;
         		Intent i = new Intent(toDoList.this, updateActivity.class);
-        		i.putExtra("_ACTIVITY", iuActivity[position]._activity);
+        		i.putExtra("_ACTIVITY", iuActivity[position].getActivity());
         		startActivityForResult(i, requestCode);
         	}
         });

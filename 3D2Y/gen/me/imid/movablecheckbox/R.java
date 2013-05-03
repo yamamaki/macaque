@@ -8,19 +8,19 @@ package me.imid.movablecheckbox;
 
 public final class R {
 	public static final class id {
-		public static final int checkbox = 0x7f05002e;
-		public static final int summary = 0x7f05002c;
-		public static final int title = 0x7f05002b;
-		public static final int widget_frame = 0x7f05002d;
-		public static final int primary = 0x7f05002a;
+		public static final int checkbox = 0x7f05002b;
+		public static final int summary = 0x7f050029;
+		public static final int title = 0x7f050028;
+		public static final int widget_frame = 0x7f05002a;
+		public static final int primary = 0x7f050027;
 	}
 	public static final class string {
 		public static final int hello = 0x7f070000;
 		public static final int app_name = 0x7f070001;
 	}
 	public static final class layout {
-		public static final int preference = 0x7f030006;
-		public static final int preference_widget_checkbox = 0x7f030007;
+		public static final int preference = 0x7f030007;
+		public static final int preference_widget_checkbox = 0x7f030008;
 		public static final int main = 0x7f030004;
 	}
 	public static final class styleable {
@@ -40,15 +40,15 @@ public final class R {
 		public static final int Preference_summaryOn = 16;
 		public static final int Preference_checkable = 6;
 		public static final int Preference_orderingFromXml = 8;
-		public static final int[] Preference = { 0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d, 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b };
+		public static final int[] Preference = { 0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011, 0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015, 0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019, 0x7f01001a, 0x7f01001b, 0x7f01001c, 0x7f01001d, 0x7f01001e, 0x7f01001f };
 		public static final int Preference_shouldDisableView = 15;
 		public static final int Preference_summary = 10;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020004;
+		public static final int ic_launcher = 0x7f020008;
 		public static final int bottom = 0x7f020000;
-		public static final int mask = 0x7f020006;
-		public static final int frame = 0x7f020003;
+		public static final int mask = 0x7f02000b;
+		public static final int frame = 0x7f020005;
 		public static final int btn_pressed = 0x7f020001;
 		public static final int btn_unpressed = 0x7f020002;
 	}
@@ -56,24 +56,24 @@ public final class R {
 		public static final int test4preference = 0x7f040000;
 	}
 	public static final class attr {
-		public static final int summary = 0x7f010014;
-		public static final int enabled = 0x7f01000b;
-		public static final int checkable = 0x7f010010;
-		public static final int numericShortcut = 0x7f01000f;
-		public static final int widgetLayout = 0x7f010016;
-		public static final int summaryOff = 0x7f01001b;
-		public static final int titleCondensed = 0x7f01000d;
-		public static final int dependency = 0x7f010017;
-		public static final int title = 0x7f01000a;
-		public static final int order = 0x7f010015;
-		public static final int persistent = 0x7f01000c;
-		public static final int alphabeticShortcut = 0x7f01000e;
-		public static final int selectable = 0x7f010011;
-		public static final int orderingFromXml = 0x7f010012;
-		public static final int shouldDisableView = 0x7f010019;
-		public static final int defaultValue = 0x7f010018;
-		public static final int key = 0x7f010013;
-		public static final int summaryOn = 0x7f01001a;
+		public static final int summary = 0x7f010018;
+		public static final int enabled = 0x7f01000f;
+		public static final int checkable = 0x7f010014;
+		public static final int numericShortcut = 0x7f010013;
+		public static final int widgetLayout = 0x7f01001a;
+		public static final int summaryOff = 0x7f01001f;
+		public static final int titleCondensed = 0x7f010011;
+		public static final int dependency = 0x7f01001b;
+		public static final int title = 0x7f01000e;
+		public static final int order = 0x7f010019;
+		public static final int persistent = 0x7f010010;
+		public static final int alphabeticShortcut = 0x7f010012;
+		public static final int selectable = 0x7f010015;
+		public static final int orderingFromXml = 0x7f010016;
+		public static final int shouldDisableView = 0x7f01001d;
+		public static final int defaultValue = 0x7f01001c;
+		public static final int key = 0x7f010017;
+		public static final int summaryOn = 0x7f01001e;
 	}
 	public static final class dimen {
 		public static final int preference_margin = 0x7f060001;

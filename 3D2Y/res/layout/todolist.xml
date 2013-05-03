@@ -45,10 +45,6 @@
         android:layout_height="0dp"
         android:layout_weight="5"
         android:background="#48D1CC" >
-	<com.slidingmenu.lib.SlidingMenu 
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	   ></com.slidingmenu.lib.SlidingMenu>
 	
     </RelativeLayout>
 
