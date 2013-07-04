@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        android:background="@drawable/add_bg">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -28,7 +29,7 @@
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
                 android:textSize="20sp"
-                android:text="更新事件" />
+                android:text="更新活动" />
 
             <Button
                 android:id="@+id/update_ok"
@@ -77,17 +78,54 @@
                 android:text="标签"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/update_tag02"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+            <Button
+                android:id="@+id/update_tagDefault"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:inputType="text" />
+                android:layout_toLeftOf="@+id/update_tagA"
+                android:background="@drawable/selector_activity_all" />
+
+            <Button
+                android:id="@+id/update_tagA"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/update_tagB"
+                android:background="#EE6363" />
+
+            <Button
+                android:id="@+id/update_tagB"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/update_tagC"
+                android:background="#87CEFA" />
+
+            <Button
+                android:id="@+id/update_tagC"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/update_tagD"
+                android:background="#EEDC82" />
+
+            <Button
+                android:id="@+id/update_tagD"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:background="#BCEE68" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id = "@+id/update_layout"
             android:layout_width="fill_parent"
             android:layout_height="50dp" >
 
@@ -103,7 +141,7 @@
 
             <EditText
                 android:id="@+id/update_address02"
-                android:layout_width="160dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/update_address03"
@@ -111,11 +149,12 @@
 
             <Button
                 android:id="@+id/update_address03"
-                android:layout_width="40dp"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="10dp" />
+                android:background="@drawable/map"
+                 />
         </RelativeLayout>
 
         <RelativeLayout

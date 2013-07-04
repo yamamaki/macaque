@@ -21,11 +21,13 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 	public static final String KEY_USERNAME = "_username";
 	public static final String KEY_PASSWORD = "_password";
 	public static final String KEY_EMAIL = "_email";
+	public static final String KEY_SESSIONID = "_sessionid";
 	
 	//数据库表 activity 中的属性名称
 	public static final String KEY_ACTIVITY = "_activity";
 	public static final String KEY_TAG = "_tag";
 	public static final String KEY_ADDRESS = "_address";
+	public static final String KEY_ADDRESS_TYPE= "_address_type";
 	public static final String KEY_DATE = "_date";
 	public static final String KEY_TIME = "_time";
 	public static final String KEY_REMIND = "_remind";
@@ -43,7 +45,8 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 			KEY_ID+" integer, "+
 			KEY_USERNAME+" text, "+
 			KEY_PASSWORD+" text, "+
-			KEY_EMAIL+" text);";
+			KEY_EMAIL+" text, "+
+			KEY_SESSIONID+" text);";
 	
 	//新建 activity 数据表
 	private static final String DB_CREATE_ACTIVITY = 
@@ -51,6 +54,7 @@ public class iuOpenHelper extends SQLiteOpenHelper{
 			KEY_ACTIVITY+" text, "+
 			KEY_TAG+" text, "+
 			KEY_ADDRESS+" text, "+
+			KEY_ADDRESS_TYPE+" integer, "+
 			KEY_DATE+" text, "+
 			KEY_TIME+" text, "+
 			KEY_REMIND+" integer, "+

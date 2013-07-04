@@ -8,19 +8,19 @@ package me.imid.movablecheckbox;
 
 public final class R {
 	public static final class id {
-		public static final int checkbox = 0x7f05002b;
-		public static final int summary = 0x7f050029;
-		public static final int title = 0x7f050028;
-		public static final int widget_frame = 0x7f05002a;
-		public static final int primary = 0x7f050027;
+		public static final int checkbox = 0x7f060039;
+		public static final int summary = 0x7f060037;
+		public static final int title = 0x7f060036;
+		public static final int widget_frame = 0x7f060038;
+		public static final int primary = 0x7f060035;
 	}
 	public static final class string {
-		public static final int hello = 0x7f070000;
-		public static final int app_name = 0x7f070001;
+		public static final int hello = 0x7f070005;
+		public static final int app_name = 0x7f070000;
 	}
 	public static final class layout {
-		public static final int preference = 0x7f030007;
-		public static final int preference_widget_checkbox = 0x7f030008;
+		public static final int preference = 0x7f030009;
+		public static final int preference_widget_checkbox = 0x7f03000a;
 		public static final int main = 0x7f030004;
 	}
 	public static final class styleable {
@@ -45,15 +45,15 @@ public final class R {
 		public static final int Preference_summary = 10;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020008;
-		public static final int bottom = 0x7f020000;
-		public static final int mask = 0x7f02000b;
-		public static final int frame = 0x7f020005;
-		public static final int btn_pressed = 0x7f020001;
-		public static final int btn_unpressed = 0x7f020002;
+		public static final int ic_launcher = 0x7f02000a;
+		public static final int bottom = 0x7f020003;
+		public static final int mask = 0x7f020011;
+		public static final int frame = 0x7f020006;
+		public static final int btn_pressed = 0x7f020004;
+		public static final int btn_unpressed = 0x7f020005;
 	}
 	public static final class xml {
-		public static final int test4preference = 0x7f040000;
+		public static final int test4preference = 0x7f050000;
 	}
 	public static final class attr {
 		public static final int summary = 0x7f010018;
@@ -76,9 +76,9 @@ public final class R {
 		public static final int summaryOn = 0x7f01001e;
 	}
 	public static final class dimen {
-		public static final int preference_margin = 0x7f060001;
-		public static final int preference_widget_icon_width = 0x7f060002;
-		public static final int list_item_height = 0x7f060003;
-		public static final int preference_icon_width = 0x7f060000;
+		public static final int preference_margin = 0x7f080001;
+		public static final int preference_widget_icon_width = 0x7f080002;
+		public static final int list_item_height = 0x7f080003;
+		public static final int preference_icon_width = 0x7f080000;
 	}
 }

@@ -8,6 +8,12 @@
 package com.example.d2y;
 
 public final class R {
+    public static final class anim {
+        public static final int refresh_rotate=0x7f040000;
+        public static final int rotate=0x7f040001;
+        public static final int zoomin=0x7f040002;
+        public static final int zoomout=0x7f040003;
+    }
     public static final class attr {
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
@@ -264,6 +270,93 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int summaryOn=0x7f01001e;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>reveal</code></td><td>0</td><td></td></tr>
+<tr><td><code>dismiss</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int swipeActionLeft=0x7f010036;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>reveal</code></td><td>0</td><td></td></tr>
+<tr><td><code>dismiss</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int swipeActionRight=0x7f010037;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int swipeAnimationTime=0x7f01002f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int swipeBackView=0x7f010034;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int swipeCloseAllItemsWhenMoveList=0x7f010032;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int swipeFrontView=0x7f010033;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>both</code></td><td>1</td><td></td></tr>
+<tr><td><code>right</code></td><td>2</td><td></td></tr>
+<tr><td><code>left</code></td><td>3</td><td></td></tr>
+</table>
+         */
+        public static final int swipeMode=0x7f010035;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int swipeOffsetLeft=0x7f010030;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int swipeOffsetRight=0x7f010031;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int swipeOpenOnLongPress=0x7f01002e;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -380,11 +473,16 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f01002d;
     }
     public static final class color {
-        public static final int black=0x7f080004;
-        public static final int blue=0x7f080002;
-        public static final int green=0x7f080001;
-        public static final int red=0x7f080000;
-        public static final int white=0x7f080003;
+        public static final int A=0x7f090006;
+        public static final int All=0x7f090005;
+        public static final int B=0x7f090007;
+        public static final int C=0x7f090008;
+        public static final int D=0x7f090009;
+        public static final int black=0x7f090004;
+        public static final int blue=0x7f090002;
+        public static final int green=0x7f090001;
+        public static final int red=0x7f090000;
+        public static final int white=0x7f090003;
     }
     public static final class dimen {
         /** 
@@ -392,116 +490,188 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060007;
-        public static final int list_item_height=0x7f060003;
-        public static final int list_padding=0x7f060005;
-        public static final int preference_icon_width=0x7f060000;
-        public static final int preference_margin=0x7f060001;
-        public static final int preference_widget_icon_width=0x7f060002;
-        public static final int shadow_width=0x7f060006;
-        public static final int slidingmenu_offset=0x7f060004;
+        public static final int activity_horizontal_margin=0x7f080007;
+        public static final int list_item_height=0x7f080003;
+        public static final int list_padding=0x7f080005;
+        public static final int preference_icon_width=0x7f080000;
+        public static final int preference_margin=0x7f080001;
+        public static final int preference_widget_icon_width=0x7f080002;
+        public static final int shadow_width=0x7f080006;
+        public static final int slidingmenu_offset=0x7f080004;
     }
     public static final class drawable {
-        public static final int bottom=0x7f020000;
-        public static final int btn_pressed=0x7f020001;
-        public static final int btn_unpressed=0x7f020002;
-        public static final int eagle=0x7f020003;
-        public static final int flamingo=0x7f020004;
-        public static final int frame=0x7f020005;
-        public static final int heron=0x7f020006;
-        public static final int ic_action_github=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int indicator=0x7f020009;
-        public static final int init_bg=0x7f02000a;
-        public static final int mask=0x7f02000b;
-        public static final int new_indicator=0x7f02000c;
-        public static final int octocat=0x7f02000d;
-        public static final int octocat_scaled=0x7f02000e;
-        public static final int ostrich=0x7f02000f;
-        public static final int peacock=0x7f020010;
-        public static final int penguin=0x7f020011;
-        public static final int shadow=0x7f020012;
-        public static final int shadowright=0x7f020013;
-        public static final int toucan=0x7f020014;
-        public static final int turkey=0x7f020015;
-        public static final int vulture=0x7f020016;
+        public static final int add=0x7f020000;
+        public static final int add_bg=0x7f020001;
+        public static final int bg_display=0x7f020002;
+        public static final int bottom=0x7f020003;
+        public static final int btn_pressed=0x7f020004;
+        public static final int btn_unpressed=0x7f020005;
+        public static final int frame=0x7f020006;
+        public static final int friendsicon=0x7f020007;
+        public static final int head=0x7f020008;
+        public static final int ic_lanucher=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int ic_pulltorefresh_arrow=0x7f02000b;
+        public static final int icon=0x7f02000c;
+        public static final int init_bg=0x7f02000d;
+        public static final int login_bg=0x7f02000e;
+        public static final int login_bg2=0x7f02000f;
+        public static final int map=0x7f020010;
+        public static final int mask=0x7f020011;
+        public static final int messageicon=0x7f020012;
+        public static final int nearbyicon=0x7f020013;
+        public static final int newfeedbg=0x7f020014;
+        public static final int newfeeds_bg=0x7f020015;
+        public static final int newsfeedbg=0x7f020016;
+        public static final int newsfeedicon=0x7f020017;
+        public static final int newsfeedrefresh=0x7f020018;
+        public static final int pull_to_refresh_header_background=0x7f020019;
+        public static final int qrcode=0x7f02001a;
+        public static final int selector_activity_a=0x7f02001b;
+        public static final int selector_activity_all=0x7f02001c;
+        public static final int selector_activity_b=0x7f02001d;
+        public static final int selector_activity_c=0x7f02001e;
+        public static final int selector_activity_d=0x7f02001f;
+        public static final int selector_button=0x7f020020;
+        public static final int selector_list_a=0x7f020021;
+        public static final int selector_list_all=0x7f020022;
+        public static final int selector_list_b=0x7f020023;
+        public static final int selector_list_c=0x7f020024;
+        public static final int selector_list_d=0x7f020025;
+        public static final int shadow=0x7f020026;
+        public static final int shadowright=0x7f020027;
+        public static final int title=0x7f020028;
+        public static final int title2=0x7f020029;
+        public static final int todolist_bg=0x7f02002a;
+        public static final int todolisticon=0x7f02002b;
+        public static final int typea=0x7f02002c;
+        public static final int typeall=0x7f02002d;
+        public static final int typeb=0x7f02002e;
+        public static final int typec=0x7f02002f;
+        public static final int typed=0x7f020030;
     }
     public static final class id {
-        public static final int action_settings=0x7f050047;
-        public static final int activityList=0x7f050035;
-        public static final int addActivity=0x7f050034;
-        public static final int add_activity01=0x7f05000c;
-        public static final int add_activity02=0x7f05000d;
-        public static final int add_address01=0x7f050010;
-        public static final int add_address02=0x7f050011;
-        public static final int add_address03=0x7f050012;
-        public static final int add_back=0x7f05000a;
-        public static final int add_date01=0x7f050013;
-        public static final int add_date02=0x7f050014;
-        public static final int add_ok=0x7f05000b;
-        public static final int add_remark01=0x7f050019;
-        public static final int add_remark02=0x7f05001a;
-        public static final int add_remind01=0x7f050017;
-        public static final int add_remind02=0x7f050018;
-        public static final int add_tag01=0x7f05000e;
-        public static final int add_tag02=0x7f05000f;
-        public static final int add_time01=0x7f050015;
-        public static final int add_time02=0x7f050016;
-        public static final int av=0x7f05001f;
-        public static final int checkbox=0x7f05002b;
-        public static final int contacts=0x7f05001d;
-        public static final int fullscreen=0x7f050003;
-        public static final int hybrid=0x7f050009;
-        public static final int left=0x7f050000;
-        public static final int login=0x7f050025;
-        public static final int login_pw01=0x7f050022;
-        public static final int login_pw02=0x7f050023;
-        public static final int login_sn01=0x7f050020;
-        public static final int login_sn02=0x7f050021;
-        public static final int map=0x7f050026;
-        public static final int margin=0x7f050002;
-        public static final int menu=0x7f05001c;
-        public static final int none=0x7f050005;
-        public static final int normal=0x7f050006;
-        public static final int primary=0x7f050027;
-        public static final int progressBar=0x7f05001e;
-        public static final int progressBar1=0x7f05001b;
-        public static final int reg=0x7f050024;
-        public static final int reg_email01=0x7f05002c;
-        public static final int reg_email02=0x7f05002d;
-        public static final int reg_next=0x7f050032;
-        public static final int reg_pw01=0x7f05002e;
-        public static final int reg_pw02=0x7f05002f;
-        public static final int reg_pw03=0x7f050030;
-        public static final int reg_pw04=0x7f050031;
-        public static final int right=0x7f050001;
-        public static final int satellite=0x7f050007;
-        public static final int selected_view=0x7f050004;
-        public static final int slidingmenumain=0x7f050033;
-        public static final int summary=0x7f050029;
-        public static final int terrain=0x7f050008;
-        public static final int title=0x7f050028;
-        public static final int update_activity01=0x7f050038;
-        public static final int update_activity02=0x7f050039;
-        public static final int update_address01=0x7f05003c;
-        public static final int update_address02=0x7f05003d;
-        public static final int update_address03=0x7f05003e;
-        public static final int update_back=0x7f050036;
-        public static final int update_date01=0x7f05003f;
-        public static final int update_date02=0x7f050040;
-        public static final int update_ok=0x7f050037;
-        public static final int update_remark01=0x7f050045;
-        public static final int update_remark02=0x7f050046;
-        public static final int update_remind01=0x7f050043;
-        public static final int update_remind02=0x7f050044;
-        public static final int update_tag01=0x7f05003a;
-        public static final int update_tag02=0x7f05003b;
-        public static final int update_time01=0x7f050041;
-        public static final int update_time02=0x7f050042;
-        public static final int widget_frame=0x7f05002a;
+        public static final int aboutUs=0x7f06002b;
+        public static final int action_settings=0x7f060075;
+        public static final int activityList=0x7f06005c;
+        public static final int activityListByTag=0x7f06005e;
+        public static final int addActivity=0x7f060055;
+        public static final int add_activity01=0x7f06000f;
+        public static final int add_activity02=0x7f060010;
+        public static final int add_address01=0x7f060018;
+        public static final int add_address02=0x7f060019;
+        public static final int add_address03=0x7f06001a;
+        public static final int add_back=0x7f06000d;
+        public static final int add_date01=0x7f06001b;
+        public static final int add_date02=0x7f06001c;
+        public static final int add_ok=0x7f06000e;
+        public static final int add_remark01=0x7f060021;
+        public static final int add_remark02=0x7f060022;
+        public static final int add_remind01=0x7f06001f;
+        public static final int add_remind02=0x7f060020;
+        public static final int add_tag01=0x7f060011;
+        public static final int add_tagA=0x7f060013;
+        public static final int add_tagB=0x7f060014;
+        public static final int add_tagC=0x7f060015;
+        public static final int add_tagD=0x7f060016;
+        public static final int add_tagDefault=0x7f060012;
+        public static final int add_time01=0x7f06001d;
+        public static final int add_time02=0x7f06001e;
+        public static final int atv_places=0x7f06002d;
+        public static final int both=0x7f06000a;
+        public static final int checkbox=0x7f060039;
+        public static final int contacts=0x7f060025;
+        public static final int dismiss=0x7f06000c;
+        public static final int fullscreen=0x7f060003;
+        public static final int head=0x7f060026;
+        public static final int hybrid=0x7f060009;
+        public static final int init_anim=0x7f060023;
+        public static final int left=0x7f060000;
+        public static final int login=0x7f06002a;
+        public static final int login_pw02=0x7f060028;
+        public static final int login_sn02=0x7f060027;
+        public static final int map=0x7f06002e;
+        public static final int margin=0x7f060002;
+        public static final int menu=0x7f060024;
+        public static final int newsFeedItemAddress=0x7f060033;
+        public static final int newsFeedItemDate=0x7f060034;
+        public static final int newsFeedItemName=0x7f060032;
+        public static final int newsFeedList=0x7f060031;
+        public static final int newsFeedText=0x7f06002f;
+        public static final int newsRefresh=0x7f060030;
+        public static final int none=0x7f060005;
+        public static final int normal=0x7f060006;
+        public static final int primary=0x7f060035;
+        public static final int pull_to_refresh_header=0x7f06003a;
+        public static final int pull_to_refresh_image=0x7f06003c;
+        public static final int pull_to_refresh_progress=0x7f06003b;
+        public static final int pull_to_refresh_text=0x7f06003d;
+        public static final int pull_to_refresh_updated_at=0x7f06003e;
+        public static final int qrcode=0x7f06002c;
+        public static final int reg=0x7f060029;
+        public static final int reg_email02=0x7f06003f;
+        public static final int reg_fin=0x7f060049;
+        public static final int reg_name01=0x7f060043;
+        public static final int reg_name02=0x7f060044;
+        public static final int reg_next=0x7f060042;
+        public static final int reg_phone01=0x7f060047;
+        public static final int reg_phone02=0x7f060048;
+        public static final int reg_place01=0x7f060045;
+        public static final int reg_place02=0x7f060046;
+        public static final int reg_pw02=0x7f060040;
+        public static final int reg_pw04=0x7f060041;
+        public static final int reveal=0x7f06000b;
+        public static final int right=0x7f060001;
+        public static final int rl=0x7f06005b;
+        public static final int rladdinfo=0x7f060017;
+        public static final int rltag=0x7f06005d;
+        public static final int satellite=0x7f060007;
+        public static final int selected_view=0x7f060004;
+        public static final int slidingmenumain=0x7f06004a;
+        public static final int snBar=0x7f06004e;
+        public static final int snImage=0x7f06004c;
+        public static final int snLayout=0x7f06004b;
+        public static final int snList=0x7f060051;
+        public static final int snText=0x7f06004d;
+        public static final int snUserName=0x7f060050;
+        public static final int summary=0x7f060037;
+        public static final int terrain=0x7f060008;
+        public static final int title=0x7f060036;
+        public static final int toDoDate=0x7f060054;
+        public static final int toDoItem=0x7f060053;
+        public static final int toDoTag=0x7f060052;
+        public static final int typeA=0x7f060057;
+        public static final int typeAll=0x7f060056;
+        public static final int typeB=0x7f060058;
+        public static final int typeC=0x7f060059;
+        public static final int typeD=0x7f06005a;
+        public static final int update_activity01=0x7f060061;
+        public static final int update_activity02=0x7f060062;
+        public static final int update_address01=0x7f06006a;
+        public static final int update_address02=0x7f06006b;
+        public static final int update_address03=0x7f06006c;
+        public static final int update_back=0x7f06005f;
+        public static final int update_date01=0x7f06006d;
+        public static final int update_date02=0x7f06006e;
+        public static final int update_layout=0x7f060069;
+        public static final int update_ok=0x7f060060;
+        public static final int update_remark01=0x7f060073;
+        public static final int update_remark02=0x7f060074;
+        public static final int update_remind01=0x7f060071;
+        public static final int update_remind02=0x7f060072;
+        public static final int update_tag01=0x7f060063;
+        public static final int update_tagA=0x7f060065;
+        public static final int update_tagB=0x7f060066;
+        public static final int update_tagC=0x7f060067;
+        public static final int update_tagD=0x7f060068;
+        public static final int update_tagDefault=0x7f060064;
+        public static final int update_time01=0x7f06006f;
+        public static final int update_time02=0x7f060070;
+        public static final int userHead=0x7f06004f;
+        public static final int widget_frame=0x7f060038;
     }
     public static final class integer {
-        public static final int num_cols=0x7f090000;
+        public static final int num_cols=0x7f0a0000;
     }
     public static final class layout {
         public static final int addactivity=0x7f030000;
@@ -509,92 +679,104 @@ containing a value of this type.
         public static final int iu_main=0x7f030002;
         public static final int login=0x7f030003;
         public static final int main=0x7f030004;
-        public static final int mapdemo=0x7f030005;
-        public static final int menu=0x7f030006;
-        public static final int preference=0x7f030007;
-        public static final int preference_widget_checkbox=0x7f030008;
-        public static final int register=0x7f030009;
-        public static final int slidingmenumain=0x7f03000a;
-        public static final int todolist=0x7f03000b;
-        public static final int updateactivity=0x7f03000c;
+        public static final int map_main=0x7f030005;
+        public static final int mapdemo=0x7f030006;
+        public static final int newsfeed=0x7f030007;
+        public static final int nfitem=0x7f030008;
+        public static final int preference=0x7f030009;
+        public static final int preference_widget_checkbox=0x7f03000a;
+        public static final int pull_to_refresh_header=0x7f03000b;
+        public static final int register=0x7f03000c;
+        public static final int regnext=0x7f03000d;
+        public static final int slidingmenumain=0x7f03000e;
+        public static final int snitem=0x7f03000f;
+        public static final int snmenu=0x7f030010;
+        public static final int todoitem=0x7f030011;
+        public static final int todolist=0x7f030012;
+        public static final int todolistbytag=0x7f030013;
+        public static final int updateactivity=0x7f030014;
     }
     public static final class menu {
-        public static final int main=0x7f0b0000;
+        public static final int main=0x7f0c0000;
     }
     public static final class string {
-        public static final int LOGIN=0x7f070018;
-        public static final int PASSWORD=0x7f070016;
-        public static final int REGISTER=0x7f070017;
-        public static final int USERNAME=0x7f070015;
-        public static final int action_settings=0x7f070013;
-        public static final int app_name=0x7f070001;
+        public static final int LOGIN=0x7f07001c;
+        public static final int PASSWORD=0x7f07001a;
+        public static final int REGISTER=0x7f07001b;
+        public static final int USERNAME=0x7f070019;
+        public static final int action_settings=0x7f070017;
+        public static final int app_name=0x7f070000;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
          */
-        public static final int auth_client_availability_notification_title=0x7f070010;
+        public static final int auth_client_availability_notification_title=0x7f070014;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=42] 
          */
-        public static final int auth_client_play_services_err_notification_msg=0x7f070011;
+        public static final int auth_client_play_services_err_notification_msg=0x7f070015;
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
-        public static final int auth_client_requested_by_msg=0x7f070012;
+        public static final int auth_client_requested_by_msg=0x7f070016;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_button=0x7f070008;
+        public static final int common_google_play_services_enable_button=0x7f07000c;
         /**  Message in confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_enable_text=0x7f070007;
+        public static final int common_google_play_services_enable_text=0x7f07000b;
         /**  Title of confirmation dialog informing user they need to enable
         Google Play services in application settings [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_enable_title=0x7f070006;
+        public static final int common_google_play_services_enable_title=0x7f07000a;
         /**  Button in confirmation dialog for installing Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_button=0x7f070005;
+        public static final int common_google_play_services_install_button=0x7f070009;
         /**  (For phones) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_phone=0x7f070003;
+        public static final int common_google_play_services_install_text_phone=0x7f070007;
         /**  (For tablets) Message in confirmation dialog informing user that
         they need to install Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_install_text_tablet=0x7f070004;
+        public static final int common_google_play_services_install_text_tablet=0x7f070008;
         /**  Title of confirmation dialog informing user that they need to install
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_install_title=0x7f070002;
+        public static final int common_google_play_services_install_title=0x7f070006;
         /**  Message in confirmation dialog informing user there is an unknown issue in Google Play
         services [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unknown_issue=0x7f07000b;
+        public static final int common_google_play_services_unknown_issue=0x7f07000f;
         /**  Message in confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_unsupported_text=0x7f07000d;
+        public static final int common_google_play_services_unsupported_text=0x7f070011;
         /**  Title of confirmation dialog informing user that Google Play services is not supported on their device [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_unsupported_title=0x7f07000c;
+        public static final int common_google_play_services_unsupported_title=0x7f070010;
         /**  Button in confirmation dialog for updating Google Play services [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_button=0x7f07000e;
+        public static final int common_google_play_services_update_button=0x7f070012;
         /**  Message in confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=NONE] 
          */
-        public static final int common_google_play_services_update_text=0x7f07000a;
+        public static final int common_google_play_services_update_text=0x7f07000e;
         /**  Title of confirmation dialog informing user that they need to update
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
-        public static final int common_google_play_services_update_title=0x7f070009;
+        public static final int common_google_play_services_update_title=0x7f07000d;
         /**  Long form sign-in button text. This is the placeholder text, used if we can't
         find the service-side assets. [CHAR LIMIT=25] 
          */
-        public static final int common_signin_button_text_long=0x7f07000f;
-        public static final int contacts=0x7f07001a;
-        public static final int hello=0x7f070000;
-        public static final int hello_world=0x7f070014;
-        public static final int menu=0x7f070019;
-        public static final int sn=0x7f07001b;
+        public static final int common_signin_button_text_long=0x7f070013;
+        public static final int contacts=0x7f07001e;
+        public static final int hello=0x7f070005;
+        public static final int hello_world=0x7f070018;
+        public static final int menu=0x7f07001d;
+        public static final int pull_to_refresh_pull_label=0x7f070001;
+        public static final int pull_to_refresh_refreshing_label=0x7f070003;
+        public static final int pull_to_refresh_release_label=0x7f070002;
+        public static final int pull_to_refresh_tap_label=0x7f070004;
+        public static final int sn=0x7f07001f;
     }
     public static final class style {
         /** 
@@ -618,14 +800,14 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f0a0000;
+        public static final int AppBaseTheme=0x7f0b0000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0a0001;
+        public static final int AppTheme=0x7f0b0001;
     }
     public static final class xml {
-        public static final int test4preference=0x7f040000;
+        public static final int test4preference=0x7f050000;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.
@@ -1408,5 +1590,185 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name android:viewBehind
         */
         public static final int SlidingMenu_viewBehind = 2;
+        /** Attributes that can be used with a SwipeListView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SwipeListView_swipeActionLeft com.example.d2y:swipeActionLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeActionRight com.example.d2y:swipeActionRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeAnimationTime com.example.d2y:swipeAnimationTime}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeBackView com.example.d2y:swipeBackView}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeCloseAllItemsWhenMoveList com.example.d2y:swipeCloseAllItemsWhenMoveList}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeFrontView com.example.d2y:swipeFrontView}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeMode com.example.d2y:swipeMode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeOffsetLeft com.example.d2y:swipeOffsetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeOffsetRight com.example.d2y:swipeOffsetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwipeListView_swipeOpenOnLongPress com.example.d2y:swipeOpenOnLongPress}</code></td><td></td></tr>
+           </table>
+           @see #SwipeListView_swipeActionLeft
+           @see #SwipeListView_swipeActionRight
+           @see #SwipeListView_swipeAnimationTime
+           @see #SwipeListView_swipeBackView
+           @see #SwipeListView_swipeCloseAllItemsWhenMoveList
+           @see #SwipeListView_swipeFrontView
+           @see #SwipeListView_swipeMode
+           @see #SwipeListView_swipeOffsetLeft
+           @see #SwipeListView_swipeOffsetRight
+           @see #SwipeListView_swipeOpenOnLongPress
+         */
+        public static final int[] SwipeListView = {
+            0x7f01002e, 0x7f01002f, 0x7f010030, 0x7f010031,
+            0x7f010032, 0x7f010033, 0x7f010034, 0x7f010035,
+            0x7f010036, 0x7f010037
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeActionLeft}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>reveal</code></td><td>0</td><td></td></tr>
+<tr><td><code>dismiss</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:swipeActionLeft
+        */
+        public static final int SwipeListView_swipeActionLeft = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeActionRight}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>reveal</code></td><td>0</td><td></td></tr>
+<tr><td><code>dismiss</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name android:swipeActionRight
+        */
+        public static final int SwipeListView_swipeActionRight = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeAnimationTime}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:swipeAnimationTime
+        */
+        public static final int SwipeListView_swipeAnimationTime = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeBackView}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:swipeBackView
+        */
+        public static final int SwipeListView_swipeBackView = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeCloseAllItemsWhenMoveList}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:swipeCloseAllItemsWhenMoveList
+        */
+        public static final int SwipeListView_swipeCloseAllItemsWhenMoveList = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeFrontView}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:swipeFrontView
+        */
+        public static final int SwipeListView_swipeFrontView = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeMode}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>none</code></td><td>0</td><td></td></tr>
+<tr><td><code>both</code></td><td>1</td><td></td></tr>
+<tr><td><code>right</code></td><td>2</td><td></td></tr>
+<tr><td><code>left</code></td><td>3</td><td></td></tr>
+</table>
+          @attr name android:swipeMode
+        */
+        public static final int SwipeListView_swipeMode = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeOffsetLeft}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:swipeOffsetLeft
+        */
+        public static final int SwipeListView_swipeOffsetLeft = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeOffsetRight}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:swipeOffsetRight
+        */
+        public static final int SwipeListView_swipeOffsetRight = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.example.d2y.R.attr#swipeOpenOnLongPress}
+          attribute's value can be found in the {@link #SwipeListView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:swipeOpenOnLongPress
+        */
+        public static final int SwipeListView_swipeOpenOnLongPress = 0;
     };
 }

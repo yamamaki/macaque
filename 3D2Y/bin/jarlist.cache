@@ -1,5 +1,6 @@
 # cache for current jar dependecy. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
-1366983095000 393154 307c1cc532eabbf1d135b43e5c983c9da700449d /home/yamamaki/workspace_for_android/3D2Y/libs/android-support-v4.jar
-1366983095000 393154 307c1cc532eabbf1d135b43e5c983c9da700449d /home/yamamaki/workspace_for_android/sliding-menu_lib/libs/android-support-v4.jar
+1366983094000 393154 307c1cc532eabbf1d135b43e5c983c9da700449d /home/zxc/workspace-android/sliding-menu_lib/libs/android-support-v4.jar
+1366983094000 393154 307c1cc532eabbf1d135b43e5c983c9da700449d /home/zxc/workspace-android/android-swipelistview-e464d38/libs/android-support-v4.jar
+1366983094000 393154 307c1cc532eabbf1d135b43e5c983c9da700449d /home/zxc/adt-bundle-linux-x86_64-20130219/macaque/3D2Y/libs/android-support-v4.jar

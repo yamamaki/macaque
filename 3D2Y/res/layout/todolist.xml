@@ -3,56 +3,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".iu" >
+    android:orientation="vertical" 
+    >
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:background="#3CB371" >
-
-        <Button
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
-            android:background="#43CD80"
-            android:text="@string/menu" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:text="@string/sn" />
+        android:layout_height="180dp"
+        android:layout_weight="0"
+        android:background="@drawable/todolist_bg" >
 
         <Button
             android:id="@+id/addActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="10dp"
-            android:background="#43CD80"
-            android:text="addActivity" />
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/add" />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"
-        android:background="#48D1CC" >
-	
+        android:layout_height="21dp"
+        android:layout_weight="0" >
+
+        <Button
+            android:id="@+id/typeAll"
+            android:layout_width="64dp"
+            android:layout_height="20dp"
+            android:background="@drawable/selector_list_all"  />
+
+        <Button
+            android:id="@+id/typeA"
+            android:layout_width="64dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/typeAll"
+            android:background="#EE6363" />
+
+        <Button
+            android:id="@+id/typeB"
+            android:layout_width="64dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/typeA"
+            android:background="#87CEFA" />
+
+        <Button
+            android:id="@+id/typeC"
+            android:layout_width="64dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/typeB"
+            android:background="#EEDC82" />
+
+        <Button
+            android:id="@+id/typeD"
+            android:layout_width="64dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@+id/typeC"
+            android:background="#BCEE68" />
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="8"
-        android:background="#4876FF" >
+        android:layout_weight="12" >
 
         <ListView
             android:id="@+id/activityList"

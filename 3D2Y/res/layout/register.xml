@@ -2,42 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/login_bg">
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:layout_height="80dp" >
+        android:layout_height="120dp" >
 
-        <TextView
+<!--         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="注册"
-            android:textSize="20sp" />
+            android:textSize="20sp" /> -->
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="50dp" >
 
-        <TextView
+<!--         <TextView
             android:id="@+id/reg_email01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:text="Email"
-            android:textSize="20sp" />
+            android:textSize="20sp" /> -->
 
         <EditText
             android:id="@+id/reg_email02"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:hint="Email"
             android:inputType="textNoSuggestions" />
     </RelativeLayout>
 
@@ -45,22 +45,21 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp" >
 
-        <TextView
+<!--         <TextView
             android:id="@+id/reg_pw01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:text="密码"
-            android:textSize="20sp" />
+            android:textSize="20sp" /> -->
 
         <EditText
             android:id="@+id/reg_pw02"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:hint="密码"
             android:inputType="textPassword" />
     </RelativeLayout>
 
@@ -68,7 +67,7 @@
         android:layout_width="fill_parent"
         android:layout_height="50dp" >
 
-        <TextView
+<!--         <TextView
             android:id="@+id/reg_pw03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,19 +75,19 @@
             android:layout_marginLeft="10dp"
             android:text="重复密码"
             android:textSize="20sp" />
-
+ -->
         <EditText
             android:id="@+id/reg_pw04"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_centerInParent="true"
+            android:hint="重复密码"
             android:inputType="textPassword" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="fill_parent"
+        android:layout_marginTop="40dp"
         android:layout_height="80dp" >
 
         <Button
@@ -98,7 +97,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="下一步" />
+            android:textSize="20dp"
+            android:text="注册" />
     </RelativeLayout>
 
 </LinearLayout>

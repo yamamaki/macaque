@@ -49,21 +49,18 @@ public class idusUserHelper {
 	}
 
 	//查找
-	public iuActivity searchActivity(iuOpenHelper iuHelper, String activity) {
-		iuActivity iuActivity = new iuActivity();
+	public iuUser searchUser(iuOpenHelper iuHelper, String username) {
+		iuUser iuUser = new iuUser();
 		SQLiteDatabase _db = iuHelper.getWritableDatabase();
-		Cursor res = _db.query(DB_TABLE_ACTIVITY, null, KEY_ACTIVITY + "=?",
-				new String[] {activity}, null, null, null);
+		Cursor res = _db.query(DB_TABLE_USER, null, KEY_USERNAME + "=?",
+				new String[] {username}, null, null, null);
 		while (res.moveToNext()) {
-			iuActivity.setIUActivity(res.getString(res.getColumnIndex(KEY_ACTIVITY)),
-					res.getString(res.getColumnIndex(KEY_TAG)), 
-					res.getString(res.getColumnIndex(KEY_ADDRESS)), 
-					res.getString(res.getColumnIndex(KEY_DATE)), 
-					res.getString(res.getColumnIndex(KEY_TIME)), 
-					res.getInt(res.getColumnIndex(KEY_REMIND)), 
-					res.getString(res.getColumnIndex(KEY_REMARK)));
+			iuUser.setUsername(res.getString(res.getColumnIndex(KEY_USERNAME)));
+			iuUser.setPassword(res.getString(res.getColumnIndex(KEY_PASSWORD)));
 		}
 		_db.close();
-		return iuActivity;
+		return iuUser;
 	}
+	
+
 }
